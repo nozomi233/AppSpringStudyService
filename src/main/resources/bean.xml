@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean  id="user" class="com.zhulang.spring.bean.User" >
+        <property name="age" value="10"/>
+        <property name="name" value="6Z2S6ZSL5YmR77yM5YGD5pyI5YiA"/>
+        <replaced-method name="eat" replacer="replacementEat" />
+    </bean>
+
+
+    <bean id="replacementEat" class="com.zhulang.spring.bean.ReplacementEat" />
+
+    <bean id="dog" class="com.zhulang.spring.bean.Dog">
+        <property name="age" value="10"/>
+        <property name="color" value="yellow"/>
+    </bean>
+
+    <bean id="teddyDog" class="com.zhulang.spring.bean.TeddyDog" parent="dog">
+        <property name="name" value="tom"/>
+    </bean>
+
+    <bean class="com.zhulang.spring.postProcessor.MyBeanFactoryPostProcessor"/>
+
+</beans>
